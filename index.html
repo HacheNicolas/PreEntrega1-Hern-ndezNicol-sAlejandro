@@ -16,7 +16,9 @@
         <hr>
         <div>
             <h2>Método de los cuadrados medios de Von Neumann</h2>
-            <p></p>
+            <p>El método consiste en tomar un número al azar, X° de 2.n cifras (inicialmente una semilla) que, al ser elevado al cuadrado; resulta un número de hasta 4.n cifras, de no ser así se deben agregar ceros a dicho resultado para que éste tenga exactamente 4.n cifras.</p>
+            <p>Se denomina X1 al número resultante de seleccionar las 2.n cifras centrales del resultado anterior.</p>
+            <p>Por último (aunque no se realiza en esta presentación para mostrar números enteros), se genera el número pseudoaleatorio U1 ubicando un punto decimal delante de las 2.n cifras de X1 y así sucesivamente para los demás números pseudoaleatorios.</p>
             <button id="botonVN" onclick="vonNeumann()">Generar simulación</button>
         </div>
         <hr>
