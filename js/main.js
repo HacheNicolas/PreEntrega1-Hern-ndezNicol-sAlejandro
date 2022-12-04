@@ -40,13 +40,16 @@ function solicitarDigitos(){
         if(!(cantidadDigitos % 2 == 0)){
             alerta("Por favor, ingrese un número que sea múltipo de 2");
         }
-        if(cantidadDigitos==0){
+        if(cantidadDigitos == 0){
             alerta("Por favor, ingrese un número distinto de 0.");
+        }
+        if(cantidadDigitos < 0){
+            alerta("Por favor, ingrese un número mayor a 0.");
         }
         if(!Number.isInteger(cantidadDigitos)){
             alerta("Por favor, ingrese solo números.");
         }
-    }while((!(cantidadDigitos % 2 == 0)) || (!Number.isInteger(cantidadDigitos)) || (cantidadDigitos==0));
+    }while((!(cantidadDigitos % 2 == 0)) || (!Number.isInteger(cantidadDigitos)) || (cantidadDigitos==0) || (cantidadDigitos < 0));
 
     consola(cantidadDigitos);
     return cantidadDigitos;
@@ -69,7 +72,10 @@ function solicitarSemilla(cantidadDigitos){
         if(!Number.isInteger(semilla)){
             alerta("Por favor, ingrese solo números.");
         }
-    }while(((semilla.toString()).length <= (cantidadDigitos-1)) || (!Number.isInteger(semilla)));
+        if(semilla < 0){
+            alerta("Por favor, ingrese un número mayor a 0.");
+        }
+    }while(((semilla.toString()).length <= (cantidadDigitos-1)) || (!Number.isInteger(semilla)) || (semilla < 0));
 
     //Se transforma el tipo de dato a String para poder utilizar los métodos propios del objeto.
     let semillaString = semilla.toString();
@@ -106,7 +112,10 @@ function solicitarCantidadDeNumeros(){
         if(!Number.isInteger(cantNumeros)){
             alerta("Por favor, ingrese solo números.");
         }
-    }while(!Number.isInteger(cantNumeros));
+        if(cantNumeros < 0){
+            alerta("Por favor, ingrese un número mayor a 0.");
+        }
+    }while(!Number.isInteger(cantNumeros) || (cantNumeros < 0));
     consola("Cantidad de números a generar: " + cantNumeros);
 
     return cantNumeros;
